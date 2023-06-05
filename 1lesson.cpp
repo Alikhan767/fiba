@@ -1,27 +1,16 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 int fibonacci(int n) {
-    if (n <= 1)
-        return n;
-
-    int prev = 0;
-    int curr = 1;
-
-    for (int i = 2; i <= n; i++) {
-        int temp = curr;
-        curr = prev + curr;
-        prev = temp;
-    }
-
-    return curr;
+    double sqrt5 = sqrt(5);
+    double phi = (1 + sqrt5) / 2;
+    return round(pow(phi, n) / sqrt5);
 }
 
 int main() {
     int n;
-    cout << "Enter the value of n: ";
+    cout << "Введите число n: ";
     cin >> n;
-
-    cout << "The " << n << "th Fibonacci number is: " << fibonacci(n) <<endl;
-
+    cout << "n-ное число Фибоначчи: " << fibonacci(n) << endl;
     return 0;
 }
